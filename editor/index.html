@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Behavior3JS Editor</title>
+
+  <script src="js/preloadjs-0.6.0.min.js" type="text/javascript"></script>
+  <link href="css/normalize-3.0.1.min.css" rel="stylesheet">
+  <link href="css/preload.css" rel="stylesheet">
+
+  <script type="text/javascript">
+    var MANIFEST = [
+      {id:'', src:'img/closedhand.cur'},
+      {id:'', src:'libs.js'},
+      {id:'', src:'build.js'},
+      {id:'', src:'build.css'},
+      {id:'view', src:'build.html'},
+    ];
+  </script>
+</head>
+
+<body>
+  <!-- PRELOAD PAGE -->
+  <div id="preloading">
+    <div class="content">
+      <img src="img/loading.gif" alt="Loading"/>
+      <p id="loading-text">
+        Loading, please wait... 
+        <strong><span id="loading-progress">0%</span></strong>
+      </p>
+    </div>
+  </div>
+  <!-- END PRELOAD PAGE -->
+  
+  <!-- APP PAGE -->
+  <div id="page"></div>
+  <!-- END APP PAGE -->
+
+  <script src="main.js" type="text/javascript"></script>
+</body>
+</html>

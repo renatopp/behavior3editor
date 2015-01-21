@@ -1,0 +1,56 @@
+{
+  "app": [
+    "../editor/data/options.js",
+    "../editor/data/shortcuts.js",
+    "../editor/data/theme_dark.js",
+    "../editor/app/utils/SettingsManager.js",
+    "../editor/app/utils/Root.js",
+    "../editor/app/utils/Organizer.js",
+    "../editor/app/draw/shapes.js",
+    "../editor/app/draw/symbols.js",
+    "../editor/app/entities/Block.js",
+    "../editor/app/entities/Connection.js",
+    "../editor/app/entities/SelectionBox.js",
+    "../editor/app/systems/CameraSystem.js",
+    "../editor/app/systems/ConnectionSystem.js",
+    "../editor/app/systems/DragSystem.js",
+    "../editor/app/systems/SelectionSystem.js",
+    "../editor/app/helpers.js",
+    "../editor/app/events.js",
+    "../editor/app/game.js",
+    "../editor/app/editor.js",
+    "../editor/app/app.js"
+  ],
+  "libs": [
+    "../editor/libs/opensans-0.1.0.js",
+    "../editor/libs/jquery-2.1.1.min.js",
+    "../editor/libs/jqueryui-1.11.2.min.js",
+    "../editor/libs/foundation-5.5.0.min.js",
+    "../editor/libs/easeljs-0.8.0.min.js",
+    "../editor/libs/creatine-0.2.0.min.js",
+    "../editor/libs/handlebars-2.0.0.min.js",
+    "../editor/libs/keymaster-1.6.3.min.js",
+    "../editor/libs/nanoscrollerjs-0.8.4.min.js",
+    "../editor/libs/collapsable-0.1.0.min.js",
+    "../editor/libs/behavior3-0.1.0.min.js",
+    "../editor/libs/notifyjs-0.3.1.min.js"
+  ],
+  "css": [
+    "../editor/css/foundation-5.5.0.min.css",
+    "../editor/css/fontawesome-4.2.0.min.css",
+    "../editor/css/nanoscrollerjs-0.8.4.min.css",
+    "../editor/css/editor.css"
+  ],
+  "html": [
+    "../editor/app/templates/menu.html",
+    "../editor/app/templates/left.html",
+    "../editor/app/templates/right.html",
+    "../editor/app/templates/canvas.html",
+    "../editor/app/templates/modal_newtree.html",
+    "../editor/app/templates/modal_importtree.html",
+    "../editor/app/templates/modal_exporttree.html",
+    "../editor/app/templates/modal_addnode.html",
+    "../editor/app/templates/modal_editnode.html",
+    "../editor/app/templates/modal_firsttime.html"
+  ]
+}

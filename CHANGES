@@ -1,0 +1,15 @@
+Version [NEXT]
+==============
+
+[editor]
+- add: editor import and export custom_node property (see #9/b3js).
+- add: editor create custom nodes automatically when importing (see #9/b3js).
+- fix: error when importing json without Display.
+- mod: new repository.
+- mod: new architecture, merging viewer and editor (see #1).
+
+
+Version 0.1.0 [Out 27, 2014]
+============================
+
+- initial release.
