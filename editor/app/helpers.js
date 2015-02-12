@@ -93,12 +93,6 @@ this.app.helpers = this.app.helpers || {};
       $('#title', app.dom.propertiesPanel).val(block.title);
       $('#description', app.dom.propertiesPanel).val(block.description);
 
-      var params = $('#parameters-table', app.dom.propertiesPanel);
-      app.helpers.remAllEditableRows(params);
-      for (var k in block.parameters) {
-        app.helpers.addEditableRow(params, k, block.parameters[k]);
-      }
-
       var propers = $('#properties-table', app.dom.propertiesPanel);
       app.helpers.remAllEditableRows(propers);
       for (var k in block.properties) {
@@ -118,21 +112,6 @@ this.app.helpers = this.app.helpers || {};
     var title = $('#title', app.dom.propertiesPanel).val();
     var description = $('#description', app.dom.propertiesPanel).val();
 
-    var params = {}
-    $('#parameters-table > .editable-row', app.dom.propertiesPanel).each(function() {
-      var row = $(this);
-      var key = $('.key > input', row).val();
-      var value = $('.value > input', row).val();
-
-      if ($.isNumeric(value)) {
-        value = parseFloat(value);
-      }
-
-      if (key) {
-        params[key] = value;
-      }
-    });
-
     var props = {}
     $('#properties-table > .editable-row', app.dom.propertiesPanel).each(function() {
       var row = $(this);
@@ -150,7 +129,6 @@ this.app.helpers = this.app.helpers || {};
 
     app.block.title = title;
     app.block.description = description;
-    app.block.parameters = params;
     app.block.properties = props;
     app.block.redraw();
   }
