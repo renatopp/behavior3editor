@@ -26,10 +26,10 @@ this.app.helpers = this.app.helpers || {};
       var node = app.editor.nodes[id];
 
       if (node.prototype.category == category) {
-        var item = _createItem(
-          node.prototype.title || node.prototype.name,
-          node.prototype.name
-        );
+        var title = node.prototype.title || node.prototype.name,
+        title = title.replace(/(<\w+>)/g, function(match, key) { return '@'; })
+
+        var item = _createItem(title, node.prototype.name );
         items.append(item);
       }
     }
@@ -137,7 +137,9 @@ this.app.helpers = this.app.helpers || {};
   /* EDITABLE TABLES ========================================================= */
   app.helpers.addEditableRow = function(table, key, value) {
     key = key || '';
-    value = value || '';
+    if (value == null) {
+      value = value || '';
+    }
 
     var row = $('<div class="editable-row"></div>');
     var colKey = $('<div class="editable-col key"><input type="text" placeholder="Key" value="'+key+'"></div>');
@@ -152,7 +154,7 @@ this.app.helpers = this.app.helpers || {};
     row.hide();
     row.fadeIn(100);
 
-    // $('input', row).change(app.events.onPropertyChange);
+    $('input', row).change(app.events.onPropertyChange);
 
     table.append(row);
   }

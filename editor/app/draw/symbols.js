@@ -122,7 +122,7 @@ b3editor.draw.memprioritySymbol = function(block, settings) {
 
 b3editor.draw.textSymbol = function(block, settings) {
     var text = new createjs.Text(
-        block.title || block.name,
+        block.getTitle(),
         '18px Arial',
         '#333333'
     );

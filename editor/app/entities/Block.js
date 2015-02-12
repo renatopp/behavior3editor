@@ -19,7 +19,6 @@ this.b3editor = this.b3editor || {};
     this.category       = dict.category;
     this.title          = dict.title || this.name;
     this.description    = dict.description || '';
-    console.log(dict);
     this.properties     = $.extend({}, dict.parameters, dict.properties);
 
     this.displayObject  = new createjs.Container();
@@ -86,6 +85,18 @@ this.b3editor = this.b3editor || {};
     // Add to display
     this.displayObject.addChild(this._shapeObject);
     this.displayObject.addChild(this._symbolObject);
+  }
+
+  p.getTitle = function() {
+    var s = this.title || this.name;
+    var this_ = this;
+    return s.replace(/(<\w+>)/g, function(match, key) {
+      var attr = key.substring(1, key.length-1);
+      if (this_.properties.hasOwnProperty(attr))
+        return this_.properties[attr];
+      else
+        return match;
+    });
   }
 
   // SELECTION ==============================================================

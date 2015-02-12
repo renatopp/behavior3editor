@@ -32,7 +32,7 @@
     "../editor/libs/keymaster-1.6.3.min.js",
     "../editor/libs/nanoscrollerjs-0.8.4.min.js",
     "../editor/libs/collapsable-0.1.0.min.js",
-    "../editor/libs/behavior3-0.1.0.min.js",
+    "../editor/libs/behavior3-0.2.0dev.min.js",
     "../editor/libs/notifyjs-0.3.1.min.js"
   ],
   "css": [
