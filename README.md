@@ -8,25 +8,33 @@ BEHAVIOR3 EDITOR
 Interested?  | http://behavior3js.guineashots.com/editor | Try it online
 -------------|-------------------------------------------|--------------
 
-**Behavior3 Editor** - or simply *b3editor* - is an online graphical editor to create Behavior Trees. The b3editor is based on [**Behavior3JS**](http://behavior3js.guineashots.com) implementation, which has a formal and stable basis. Check it out more reasons to use this tool:
+**Behavior3 Editor** - or simply *b3editor* - is an online visual editor to create Behavior Trees. The b3editor is based on [**Behavior3JS**](http://behavior3js.guineashots.com) implementation, which has a formal and stable basis.
 
-- **Open Source Software**: under MIT license, you can use this software freely, adapt it to your need and even use an specialized internal version on your company. You can also contribute with bug fixes, suggestions and patches.
 
-- **Open Format**: b3editor can export the modeled trees as JSON files, following an open format. If there is not official reader on your favorite language yet, you can develop your own library and use the trees created here.
+Why should I use Behavior3 Editor?
+----------------------------------
 
-- **Formality**: the editor works above the basis created by Behavior3JS, which in turn is based on formal description of behavior trees. Thus, the editor provides a stable solution for modeling agents for your games or other applications.
+Why should you use b3editor? What is different from other editors? Can it compete against commercial alternatives?
 
-- **Focus on Usability**: intuitiveness is the key word of b3editor. We focus on providing an easy, clear, and intuitive tool for programmers and non-programmers. If there is something obscure or too difficult to use, report it immediately!
+Well, check it out some characteristics of Behavior3 Editor:
 
-- **Minimalist, but Functional**: b3editor follows a minimalist style, trying to reduce the amount of non-essential information presented on the screen. We focus on the important things that is designing Behavior Trees. 
+- **Open Source Software**: under MIT license, you can use this software freely, adapt it to your need and even use a specialized internal version in your company. You can also contribute with bug fixes, suggestions and patches to make it better.
+
+- **Open Format**: b3editor can export the modeled trees to JSON files, following an open format. If there is no official reader on your favorite language yet, you can develop your own library and use the trees created here. 
+
+- **Formality**: the editor works above the basis created by Behavior3JS, which in turn is based on formal description of behavior trees. Thus, the editor provides a stable solution to model agents for your games or other applications such as robotics and simulations in general.
+
+- **Focus on Usability**: intuitiveness is the key word of b3editor. We focus on providing an easy, clean, and intuitive tool for programmers and non-programmers. If there is something obscure or too difficult to use, report it immediately!
+
+- **Minimalist, but Functional**: b3editor follows a minimalist style, trying to reduce the amount of non-essential information presented on the screen. We focus on the important things: designing Behavior Trees. 
 
 - **Customizable**: create your own node types and customize nodes instances individually. Create several projects and trees, change titles and add properties.
 
 - **Big Projects Ahead**: we are working towards a collaborative tool in order to provide an awesome editor for big projects involving several designers working together. 
 
-Interested? Try it online:
+- **No Install or Depedences**: try it online:
 
-- http://behavior3js.guineashots.com/editor
+    - http://behavior3js.guineashots.com/editor
 
 If you are interested in the development version, you can access it on:
 
