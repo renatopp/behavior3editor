@@ -1,0 +1,24 @@
+<div class="node-panel panel" scrollable>
+  <ul class="item-list">
+    <li ng-repeat="category in categories">
+      <a class="header" href="#">{{category}}</a>
+      <ul>
+        <li ng-repeat="node in nodes[category]">
+          <a id="node-{{node.prototype.name}}" 
+             href="#"
+             draggable-node
+             onmouseover="this.lastElementChild.style.display='inline-block';"
+             onmouseout="this.lastElementChild.style.display='none';">
+            {{getTitle(node);}}
+            <button href="#" class="edit right" ng-show="canEditNode(node.prototype.name);" ng-click="showEditNodeModal(node.prototype.name)" style="display: none;">Edit</button>
+          </a>
+        </li>
+        <li ng-show="nodes[category].length===0">
+          <span class="empty">Empty</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <a class="button success" ng-click="showAddNodeModal()" href="#">Add Custom Nodes</a>
+</div>

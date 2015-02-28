@@ -8,6 +8,10 @@ Version [NEXT]
 - add: editor create custom nodes automatically when importing (see #9/b3js).
 - fix: error when importing json without Display.
 - mod: parameters are read-only now, so they cannot be edited (see #2).
+- add: interface is using AngularJS now.
+- rem: dependence on JQuery and other libraries is removed.
+- mod: all communication (editor->app) is done by events.
+- add: editor now support multiple trees, you can change it on tree panel.
 
 
 Version 0.1.0 [Out 27, 2014]

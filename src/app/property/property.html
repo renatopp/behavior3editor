@@ -1,0 +1,33 @@
+<div id="property-panel" class="property-panel panel" scrollable>
+  
+  <div ng-show="block === null">
+    <p style="text-align:center">Select a <strong>single</strong> block to change its properties.</p>
+    <p style="text-align:center"><em>NOTE: The root node represents a tree. Therefore, changes applied to this node will persist on the tree object.</em></p>
+  </div>
+  
+  <div ng-hide="block === null">
+    <form>
+      <div class="row">
+        <label>Title</label>
+        <input id="title" type="text" onkeyup="element(this).updateProperties(this)" placeholder="title"/>
+      </div>
+
+      <div class="row">
+        <label>Description</label>
+        <textarea id="description" type="text" rows="4" onkeyup="element(this).updateProperties(this)" placeholder="description"></textarea>
+      </div>
+
+      <div class="row">
+        <label class="clearfix">
+          <span class="left">Properties</span>
+          <a href="#" ng-click="addRow()" class="button success right">+</a>
+        </label>
+
+        <table id="property-properties-table">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>

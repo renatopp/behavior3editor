@@ -1,0 +1,73 @@
+<div id="addnode-modal" class="modal wide">
+  <div class='modal-overlay' ng-click='close("Cancel")'></div>
+  <div class="modal-dialog">
+    <div class="modal-dialog-content">
+      <a class="button modal-close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true" href="#">&times;</a>
+
+      <div class="modal-header">
+        <h1 class="modal-title">Add Custom Node</h1>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <label class="clearfix">
+              <span class="left">Node Specification</span>
+              <a href="#" ng-click="addRow()" class="button success right">+</a>
+            </label>
+
+            <table id="addnode-properties-table">
+              <tbody>
+                <tr>
+                  <td><input id="name" type="text" placeholder="name" /></td>
+                  <td><input id="title" type="text" placeholder="title" /></td>
+                  <td>
+                    <select id="category">
+                      <option value="composite">Composite</option>
+                      <option value="decorator">Decorator</option>
+                      <option value="condition">Condition</option>
+                      <option value="action" selected>Action</option>
+                    </select>
+                  </td>
+                  <td><a href="#" propertyremovable class="button alert right">-</a></td>
+                </tr>
+                <tr>
+                  <td><input id="name" type="text" placeholder="name" /></td>
+                  <td><input id="title" type="text" placeholder="title" /></td>
+                  <td>
+                    <select id="category">
+                      <option value="composite">Composite</option>
+                      <option value="decorator">Decorator</option>
+                      <option value="condition">Condition</option>
+                      <option value="action" selected>Action</option>
+                    </select>
+                  </td>
+                  <td><a href="#" propertyremovable class="button alert right">-</a></td>
+                </tr>
+                <tr>
+                  <td><input id="name" type="text" placeholder="name" /></td>
+                  <td><input id="title" type="text" placeholder="title" /></td>
+                  <td>
+                    <select id="category">
+                      <option value="composite">Composite</option>
+                      <option value="decorator">Decorator</option>
+                      <option value="condition">Condition</option>
+                      <option value="action" selected>Action</option>
+                    </select>
+                  </td>
+                  <td><a href="#" propertyremovable class="button alert right">-</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#" ng-click="close('No')" class="button secondary" data-dismiss="modal">Cancel</a>
+        <a href="#" ng-click="addNodes(); close('Yes')" class="button" data-dismiss="modal">Add</a>
+      </div>
+
+    </div>
+  </div>
+</div>
