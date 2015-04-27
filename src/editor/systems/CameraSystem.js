@@ -21,6 +21,9 @@ this.b3editor = this.b3editor || {};
     this.canvas.stage.on('stagemousedown', this.onMouseDown, this);
     this.canvas.stage.on('stagemousemove', this.onMouseMove, this);
     this.canvas.stage.on('stagemouseup', this.onMouseUp, this);
+    this.canvas.canvas.addEventListener('wheel', function(event) {
+      this_.onMouseWheel(event)
+    });
     this.canvas.canvas.addEventListener('mousewheel', function(event) {
       this_.onMouseWheel(event)
     });
@@ -56,7 +59,7 @@ this.b3editor = this.b3editor || {};
   };
 
   p.onMouseWheel = function(event) {
-    if (event.wheelDeltaY > 0) {
+    if ((event.wheelDeltaY||event.deltaY) > 0) {
       this.editor.zoomIn();
     } else {
       this.editor.zoomOut();
