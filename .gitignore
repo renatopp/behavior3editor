@@ -31,5 +31,8 @@ node_modules
 .idea
 
 # Custom
-todo
+dist
+src/vendor
+cache
+teste.py
 

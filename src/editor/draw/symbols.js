@@ -1,10 +1,7 @@
-this.b3editor = this.b3editor || {};
-this.b3editor.draw = this.b3editor.draw || {};
-
 (function() {
-    "use strict";
+  "use strict";
 
-b3editor.draw.rootSymbol = function(block, settings) {
+  b3e.draw.rootSymbol = function(block, settings) {
     // var shape = block.displayObject;
     var shape = new createjs.Shape();
 
@@ -22,9 +19,9 @@ b3editor.draw.rootSymbol = function(block, settings) {
     shape.graphics.endStroke();
 
     return shape;
-};
+  };
 
-b3editor.draw.sequenceSymbol = function(block, settings) {
+  b3e.draw.sequenceSymbol = function(block, settings) {
     // var shape = block.displayObject;
     // var shape = block._shapeObject;
     var shape = new createjs.Shape();
@@ -45,9 +42,9 @@ b3editor.draw.sequenceSymbol = function(block, settings) {
     shape.graphics.endStroke();
 
     return shape;
-};
+  };
 
-b3editor.draw.memsequenceSymbol = function(block, settings) {
+  b3e.draw.memsequenceSymbol = function(block, settings) {
     var shape = new createjs.Shape();
 
     var w = block._width;
@@ -71,9 +68,9 @@ b3editor.draw.memsequenceSymbol = function(block, settings) {
     shape.graphics.endStroke();
 
     return shape;
-};
+  };
 
-b3editor.draw.prioritySymbol = function(block, settings) {
+  b3e.draw.prioritySymbol = function(block, settings) {
     // var shape = block.displayObject;
     // var shape = block._shapeObject;
     var shape = new createjs.Shape();
@@ -95,9 +92,9 @@ b3editor.draw.prioritySymbol = function(block, settings) {
     shape.graphics.endStroke();
 
     return shape;
-};
+  };
 
-b3editor.draw.memprioritySymbol = function(block, settings) {
+  b3e.draw.memprioritySymbol = function(block, settings) {
     var shape = new createjs.Shape();
 
     var w = block._width;
@@ -118,13 +115,13 @@ b3editor.draw.memprioritySymbol = function(block, settings) {
     shape.graphics.endStroke();
 
     return shape;
-};
+  };
 
-b3editor.draw.textSymbol = function(block, settings) {
+  b3e.draw.textSymbol = function(block, settings) {
     var text = new createjs.Text(
         block.getTitle(),
         '18px Arial',
-        '#333333'
+        settings.get('block_symbol_color')
     );
     text.textAlign = 'center';
 
@@ -135,6 +132,15 @@ b3editor.draw.textSymbol = function(block, settings) {
     // text.y = -block._height/2;
 
     return text;
-}
+  };
+
+
+  b3e.draw.SYMBOLS = {
+    'Root'        : b3e.draw.rootSymbol,
+    'Sequence'    : b3e.draw.sequenceSymbol,
+    'Priority'    : b3e.draw.prioritySymbol,
+    'MemSequence' : b3e.draw.memsequenceSymbol,
+    'MemPriority' : b3e.draw.memprioritySymbol,
+  }
 
 }());

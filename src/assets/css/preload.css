@@ -1,27 +1,56 @@
 html, body {
-  padding  : 0px;
-  margin   : 0px;
-  overflow : hidden;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
 }
 
-#preloading {
-  position   : absolute;
-  top        : 0;
-  left       : 0;
-  width      : 100%;
-  height     : 100%;
-  color      : #999999;
-  background : #171717;
+.preloading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #999999;
+  background: #171717;
+  z-index: 10000000;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+
+  -webkit-transition : opacity .5s ease-in-out;
+  -moz-transition    : opacity .5s ease-in-out;
+  -o-transition      : opacity .5s ease-in-out;
+  transition         : opacity .5s ease-in-out;
 }
-#preloading .content {
-  text-align : center;
-  width      : 50vw;
-  margin     : 35vh auto;
-  padding    : 50px 0px;
+
+.preloading .loader-text {
+  font-size : 35px;
+  width: 50vw;
+  margin: 48vh auto;
 }
-#preloading p {
-  font-family : sans-serif !important;
-  font-size   : 26px !important;
-  margin      : 26px 0px !important;
-  font-weight : 100 !important;
+.preloading .loader-text a {
+  color: #545454;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 2px 2px #292929;
+}
+.preloading .loader-text a:hover {
+  text-decoration: none;
+  color: #999;
+}
+
+.preloading .loader-progress {
+  font-size : 20px;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+}
+
+.less-error-message {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
+}
+
+.preloading.preload-fade {
+  opacity: 0;
 }

@@ -1,83 +1,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Behavior3JS Editor</title>
+  <meta charset="utf-8"/>
+  <title>Behavior3 Editor - http://behavior3.com</title>
 
-  <script src="assets/js/preloadjs-0.6.0.min.js" type="text/javascript"></script>
-  <link href="assets/css/normalize-3.0.1.min.css" rel="stylesheet">
-  <link href="assets/css/preload.css" rel="stylesheet">
+  <!-- LIBS -->
+  <script type="text/javascript" src="assets/libs/createjs.min.js"></script>
+  <script type="text/javascript" src="assets/libs/creatine-1.0.0.min.js"></script>
+  <script type="text/javascript" src="assets/libs/behavior3js-0.1.0.min.js"></script>
+  <script type="text/javascript" src="assets/libs/mousetrap.min.js"></script>
+  <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+  <script type="text/javascript" src="vendor/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="vendor/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/preload.css">
+  <link rel="stylesheet" type="text/css" href="vendor/normalize.css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/sweetalert/dist/sweetalert.css">
+  <!-- <link rel="stylesheet" type="text/css" href="vendor/sweetalert/themes/google.css"> -->
+
+  <!-- EDITOR -->
+  <script type="text/javascript" src="editor/namespaces.js"></script>
+  <script type="text/javascript" src="editor/utils/functions.js"></script>
+  <script type="text/javascript" src="editor/utils/settings.js"></script>
+  <script type="text/javascript" src="editor/utils/EditorError.js"></script>
+  <script type="text/javascript" src="editor/utils/Block.js"></script>
+  <script type="text/javascript" src="editor/utils/Connection.js"></script>
+  <script type="text/javascript" src="editor/utils/Node.js"></script>
+  <script type="text/javascript" src="editor/utils/Root.js"></script>
+  <script type="text/javascript" src="editor/utils/SelectionBox.js"></script>
+  <script type="text/javascript" src="editor/utils/SettingsManager.js"></script>
+  <script type="text/javascript" src="editor/utils/Command.js"></script>
+  <script type="text/javascript" src="editor/draw/shapes.js"></script>
+  <script type="text/javascript" src="editor/draw/symbols.js"></script>
+  <script type="text/javascript" src="editor/editor/Editor.js"></script>
+  <script type="text/javascript" src="editor/editor/managers/ShortcutManager.js"></script>
+  <script type="text/javascript" src="editor/editor/managers/ExportManager.js"></script>
+  <script type="text/javascript" src="editor/editor/managers/ImportManager.js"></script>
+  <script type="text/javascript" src="editor/editor/managers/ProjectManager.js"></script>
+  <script type="text/javascript" src="editor/editor/systems/CameraSystem.js"></script>
+  <script type="text/javascript" src="editor/editor/systems/CollapseSystem.js"></script>
+  <script type="text/javascript" src="editor/editor/systems/ConnectionSystem.js"></script>
+  <script type="text/javascript" src="editor/editor/systems/DragSystem.js"></script>
+  <script type="text/javascript" src="editor/editor/systems/ShortcutSystem.js"></script>
+  <script type="text/javascript" src="editor/editor/systems/SelectionSystem.js"></script>
+  <script type="text/javascript" src="editor/project/Project.js"></script>
+  <script type="text/javascript" src="editor/project/managers/NodeManager.js"></script>
+  <script type="text/javascript" src="editor/project/managers/TreeManager.js"></script>
+  <script type="text/javascript" src="editor/project/managers/HistoryManager.js"></script>
+  <script type="text/javascript" src="editor/tree/Tree.js"></script>
+  <script type="text/javascript" src="editor/tree/managers/BlockManager.js"></script>
+  <script type="text/javascript" src="editor/tree/managers/ConnectionManager.js"></script>
+  <script type="text/javascript" src="editor/tree/managers/EditManager.js"></script>
+  <script type="text/javascript" src="editor/tree/managers/OrganizeManager.js"></script>
+  <script type="text/javascript" src="editor/tree/managers/SelectionManager.js"></script>
+  <script type="text/javascript" src="editor/tree/managers/ViewManager.js"></script>
   
-  <script src="assets/js/angular-1.3.13.min.js" type="text/javascript"></script>
-  <script src="app/app.js" type="text/javascript"></script>
-  <script src="app/common/sidebar/sidebar.js" type="text/javascript"></script>
-  <script src="app/common/tabs/tabs.js" type="text/javascript"></script>
-  <script src="app/common/modal/modal.js" type="text/javascript"></script>
-  <script src="app/common/notification/notification.js" type="text/javascript"></script>
-  <script src="app/common/scrollable/scrollable.js" type="text/javascript"></script>
-  <script src="app/menu/menu.js" type="text/javascript"></script>
-  <script src="app/node/node.js" type="text/javascript"></script>
-  <script src="app/node/directives.js" type="text/javascript"></script>
-  <script src="app/tree/tree.js" type="text/javascript"></script>
-  <script src="app/tree/directives.js" type="text/javascript"></script>
-  <script src="app/property/property.js" type="text/javascript"></script>
+    
+  <!-- LESS -->
+  <link rel="stylesheet/less" type="text/css" href="assets/less/variables.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/bootstrap.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/animations.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/app.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/page.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/sidebar.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/menubar.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/dash.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/notification.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/tabset.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/nodes.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/trees.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/properties.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/modal.less" />
+  <link rel="stylesheet/less" type="text/css" href="assets/less/keytable.less" />
+  <script type="text/javascript" src="vendor/less/dist/less.min.js"></script>
 
+  <!-- APP -->
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/app.routes.js"></script>
+  <script type="text/javascript" src="app/app.controller.js"></script>
+  <script type="text/javascript" src="app/directives/tabset.directive.js"></script>
+  <script type="text/javascript" src="app/directives/tab.directive.js"></script>
+  <script type="text/javascript" src="app/directives/dragnode.directive.js"></script>
+  <script type="text/javascript" src="app/directives/dropnode.directive.js"></script>
+  <script type="text/javascript" src="app/directives/keytable.directive.js"></script>
+  <script type="text/javascript" src="app/validators/blacklist.directive.js"></script>
+  <script type="text/javascript" src="app/services/settings.service.js"></script>
+  <script type="text/javascript" src="app/services/project.service.js"></script>
+  <script type="text/javascript" src="app/services/nodejs.service.js"></script>
+  <script type="text/javascript" src="app/services/localstorage.service.js"></script>
+  <script type="text/javascript" src="app/services/filestorage.service.js"></script>
+  <script type="text/javascript" src="app/services/storage.service.js"></script>
+  <script type="text/javascript" src="app/services/notification.service.js"></script>
+  <script type="text/javascript" src="app/services/system.service.js"></script>
+  <script type="text/javascript" src="app/services/editor.service.js"></script>
+  <script type="text/javascript" src="app/services/dialog.service.js"></script>
+  <script type="text/javascript" src="app/pages/dash/dash.controller.js"></script>
+  <script type="text/javascript" src="app/pages/home/home.controller.js"></script>
+  <script type="text/javascript" src="app/pages/projects/projects.controller.js"></script>
+  <script type="text/javascript" src="app/pages/settings/settings.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/editor.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/modals/editnode.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/modals/export.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/modals/import.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/components/menubar.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/components/nodespanel.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/components/treespanel.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/components/propertiespanel.controller.js"></script>
+  <script type="text/javascript" src="app/pages/editor/editor.controller.js"></script>
 
-  <script type="text/javascript">
-    var MANIFEST = [
-      {id:'', src:'assets/img/closedhand.cur'},
-      {id:'', src:'build.css'},
-      {id:'', src:'libs.js'},
-      {id:'', src:'build.js'},
-    ];
+  <script>
+  var MANIFEST = [];
   </script>
 </head>
 
-<body>
-
+<body ng-controller="AppController as app">
+  
   <!-- PRELOAD PAGE -->
-  <div id="preloading">
-    <div class="content">
-      <img src="assets/img/loading.gif" alt="Loading"/>
-      <p id="loading-text">
-        Loading, please wait... 
-        <strong><span id="loading-progress">0%</span></strong>
-      </p>
-    </div>
+  <div id="prld" class="preloading">
+    <p class="loader-text"><a href="http://behavior3js.guineashots.com">Behavior3</a></p>
+    <p id="prgs" class="loader-progress">0%</p>
   </div>
   <!-- END PRELOAD PAGE -->
   
   <!-- APP PAGE -->
-  <div id="page">
-    <canvas id="game-canvas" width="640" height="480" droppable-node></canvas>
-    <menu></menu>
-    <sidebar class="left">
-      <div class="tabset" ng-controller="TabController">
-        <ul class="header">
-          <li><a href="#" ng-class="{active:visible(0)}" ng-click="select(0)">Trees</a></li>
-          <li><a href="#" ng-class="{active:visible(1)}" ng-click="select(1)">Nodes</a></li>
-        </ul>
-
-        <div ng-show="visible(0)"><treepanel>0</treepanel></div>
-        <div ng-show="visible(1)"><nodepanel>1</nodepanel></div>
-      </div>
-    </sidebar>
-    <sidebar class="right">
-      <div class="tabset" ng-controller="TabController">
-        <ul class="header">
-          <li><a href="#" ng-class="{active:visible(1)}" ng-click="select(1)">Properties</a></li>
-          <!-- <li><a href="#" ng-class="{active:visible(0)}" ng-click="select(0)">Help</a></li> -->
-        </ul>
-
-        <div ng-show="visible(1)"><propertypanel>1</propertypanel></div>
-        <!-- <div ng-show="visible(0)"><helppanel>2</helppanel></div> -->
-      </div>
-    </sidebar>
+  <div class="app">
+    <div ui-view class="app-anim"></div>
+    <!-- <div class="sidebar-stub"></div> -->
   </div>
   <!-- END APP PAGE -->
 
-  <span ng-controller="NotificationController"></span>
+  <script type="text/javascript" src="main.js"></script>
 
-  <script src="main.js" type="text/javascript"></script>
 </body>
 </html>
