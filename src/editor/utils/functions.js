@@ -1,10 +1,16 @@
+/**
+ * Polyfill and util functions.
+ */
 
+/**
+ * JSON
+ */
 if (!JSON3) {
   JSON3 = JSON;
 }
 
 /**
- * Format function
+ * String.format function
  */
 if (!String.prototype.format) {
   String.prototype.format = function() {
@@ -34,8 +40,12 @@ if (!Array.prototype.remove) {
   };
 }
 
-// Production steps of ECMA-262, Edition 5, 15.4.4.18
-// Reference: http://es5.github.io/#x15.4.4.18
+/**
+ * Array.forEach function
+ * 
+ * Production steps of ECMA-262, Edition 5, 15.4.4.18
+ * Reference: http://es5.github.io/#x15.4.4.18
+ */
 if (!Array.prototype.forEach) {
   Array.prototype.forEach = function(callback, thisArg) {
 
@@ -92,7 +102,10 @@ if (!Array.prototype.forEach) {
   };
 }
 
-// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+/**
+ * Object.keys function
+ * From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+ */
 if (!Object.keys) {
   Object.keys = (function() {
     'use strict';

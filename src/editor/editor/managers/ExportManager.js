@@ -30,6 +30,8 @@ b3e.editor.ExportManager = function(editor) {
     var tree = project.trees.getSelected();
 
     var data = {
+      version      : b3e.VERSION,
+      scope        : 'project',
       selectedTree : (tree?tree._id:null),
       trees        : [],
       custom_nodes : this.nodesToData()
@@ -58,6 +60,8 @@ b3e.editor.ExportManager = function(editor) {
     var root = tree.blocks.getRoot();
     var first = getBlockChildrenIds(root);
     var data = {
+      version      : b3e.VERSION,
+      scope        : 'tree',
       id           : tree._id,
       title        : root.title,
       description  : root.description,
@@ -110,6 +114,8 @@ b3e.editor.ExportManager = function(editor) {
     project.nodes.each(function(node) {
       if (!node.isDefault) {
         data.push({
+          version     : b3e.VERSION,
+          scope       : 'node',
           name        : node.name,
           category    : node.category,
           title       : node.title,

@@ -1,3 +1,10 @@
+/**
+ * Default settings of the editor.
+ *
+ * @constant {Object} DEFAULT_SETTINGS
+ * @memberOf b3e
+ */
+
 (function () {
   "use strict";
 
@@ -14,8 +21,6 @@
     snap_offset_x : 0,
     snap_offset_y : 0,
     layout        : 'horizontal', // vertical
-    // layout        : 'vertical', // vertical
-
     max_history   : 100,
 
     // COLORS
@@ -46,8 +51,8 @@
     block_border_width     : 2,
     block_root_width       : 40,
     block_root_height      : 40,
-    block_tree_width     : 160,
-    block_tree_height    : 40,
+    block_tree_width       : 160,
+    block_tree_height      : 40,
     block_composite_width  : 40,
     block_composite_height : 40,
     block_decorator_width  : 60,

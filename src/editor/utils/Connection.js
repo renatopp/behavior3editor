@@ -1,6 +1,14 @@
+/** @module b3e */
+
 (function () {
   "use strict";
 
+  /**
+   * Represents a connection between two blocks.
+   *
+   * @class Connection
+   * @constructor
+   */
   var Connection = function() {
     this.Shape_constructor();
 
@@ -9,11 +17,25 @@
     this._outBlock = null;
   }
   var p = createjs.extend(Connection, createjs.Shape);
-
+ 
+  /**
+   * Apply the editor settings to this connection.
+   *
+   * @method _applySettings
+   * @param Object {b3e.SettingsManager} The settings object.
+   * @protected
+   */
   p._applySettings = function(settings) {
     this._settings = settings;
     this._redraw();
   }
+
+  /**
+   * Redraw the connection.
+   *
+   * @method _redraw
+   * @protected
+   */
   p._redraw = function(x1, y1, x2, y2) {
     if (!this._inBlock && (x1==null&&y1==null) ||
         !this._outBlock && (x2==null&&y2==null)) {
